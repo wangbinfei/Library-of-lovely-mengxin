@@ -1,0 +1,323 @@
+@font-face {
+    font-family: '叶根友毛笔行书2.0版';
+    url:('../font/ygyxsziti2.0.ttf');
+}
+
+/*html5*/
+/*article,aside,dialog,footer,header,section,footer,nav,figure,menu{display:block}*/
+
+/**{*/
+    /*padding: 0;*/
+    /*margin: 0;*/
+/*}*/
+
+/*html,body,h1,h2,h3,h4,h5,h6,hr,p,iframe,dl,dt,dd,ul,ol,li,pre,form,button,input,textarea,th,td,fieldset{margin:0;padding:0}*/
+
+body{
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    color: black;
+    background-color: rgb(233, 250, 255);
+    font-family: '叶根友毛笔行书2.0版',楷体,"Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+header{
+    background-color: lightblue;
+    padding: 5px;
+}
+
+a{
+    color: black;
+}
+a:hover{
+    text-decoration: none;
+}
+a:visited{
+    text-decoration: none;
+}
+
+#user-help{
+    font-size: 14px;
+    padding: 0;
+    min-height: 22px;
+}
+
+.tag{
+    margin-bottom: 2px;
+}
+
+#myCarousel{
+    height: 373px;
+    width: 700px;
+    margin: 10px auto;
+}
+
+.index-hidden{
+    display: none;
+}
+
+.carousel-indicators li{
+    border: 1px solid black;
+}
+
+.caption{
+    position: relative;
+    top: 290px;
+    text-align: center;
+}
+
+.item{
+    height: 373px;
+    width: 700px;
+    background-size: 100%;
+    background-repeat: no-repeat;
+}
+
+
+.carousel-control{
+    display: none;
+    line-height: 373px;
+    font-size: 50px;
+    width:50px;
+}
+
+#myCarousel:hover .carousel-control{
+    display: block;
+}
+
+#upload-book{
+    width: 30px;
+    height: 113px;
+    border-radius: 3px;
+    float: left;
+    font-size: 20px;
+    text-align: center;
+    cursor: pointer;
+    border: 1px dashed dimgray;
+}
+
+.backdrop{
+    height: 100%;
+}
+
+.bookshelf{
+    height: 1000px;
+    width: 700px;
+    margin: 0 auto;
+    background-image: url("/Library_of_lovely_xin/Public/image/bookshelf3.jpg");
+    /*background-size: cover;*/
+    /*filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(*/
+            /*src='/Library_of_lovely_xin/Public/image/bookshelf3.jpg',*/
+            /*sizingMethod='scale');*/
+    background-size: 100%;
+    background-repeat: no-repeat;
+}
+
+.shuji{
+    width: 30px;
+    height: 113px;
+    border: 1px solid darkslategray;
+    border-radius: 3px;
+    background: GoldenRod;
+    float: left;
+    font-size: 20px;
+    text-align: center;
+    cursor: pointer;
+}
+
+.shelf-top{
+    height: 100px;
+}
+
+/*第一层书列*/
+.shelf-frame{
+    width: 480px;
+    margin: 0 auto 20px 98px;
+}
+
+h3{
+    text-align: center;
+}
+
+/*第二层书列*/
+.shelf-frame2{
+    height: 113px;
+    width: 200px;
+    position: relative;
+    top: 270px;
+    left: 310px;
+}
+
+/*第三层书列*/
+.shelf-frame3{
+    height: 113px;
+    width: 490px;
+    position: relative;
+    top: 440px;
+    left: 128px;
+}
+
+.shuji-clear{
+    clear: both;
+}
+
+#shujimodal{
+    font-family: 仿宋, Arial, sans-serif;
+    font-weight: bold;
+}
+
+.page-content div{
+    text-align: center;
+}
+
+.page-lf{
+    width: 700px;
+    position: absolute;
+    top: 460px;
+}
+
+.span-right{
+    float: right;
+}
+
+.book-page-float{
+    float: left;
+}
+
+.book-body{
+    margin: 0 auto 50px 10% ;
+}
+
+.book-page{
+    /*width: 76%;*/
+    /*height: 44%;*/
+    width: 1050px;
+    height: 610px;
+    margin: 10px auto;
+    padding: 100px 140px 1px 120px;
+    background: url("/Library_of_lovely_xin/Public/image/book53.png");
+    background-size: 100%;
+    background-repeat: no-repeat;
+}
+
+.book-pageleft{
+    width: 360px;
+    height: 420px;
+    float: left;
+}
+
+.book-pageright{
+    width: 360px;
+    height: 420px;
+    float: right;
+}
+
+.clear{
+    clear: both;
+}
+
+pre{
+    margin: 0 20px;
+    color: black;
+    font-weight: bolder;
+    line-height: 29px;
+    white-space: pre-wrap;
+    background: rgb(0, 0, 0);
+    filter: alpha(opacity=0);
+    background: rgba(0,0,0,0);
+    border: 0;
+    font-family: 楷体,"Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 18px;
+}
+
+.pageNum{
+    margin: 0 10px;
+}
+
+.pageNum1{
+    float: left;
+}
+
+.pageNum2{
+    float: right;
+}
+
+.range{
+    width: 700px;
+    margin: 0 auto;
+}
+
+/*==========以下部分是Validform必须的===========*/
+.Validform_checktip{
+    margin-left:8px;
+    line-height:20px;
+    height:20px;
+    overflow:hidden;
+    color:#999;
+    font-size:12px;
+}
+.Validform_right{
+    color:#71b83d;
+    padding-left:20px;
+    background:url(/Library_of_lovely_xin/Public/Validform/images/right.png) no-repeat left center;
+}
+.Validform_wrong{
+    color:red;
+    padding-left:20px;
+    white-space:nowrap;
+    background:url(/Library_of_lovely_xin/Public/Validform/images/error.png) no-repeat left center;
+}
+.Validform_loading{
+    padding-left:20px;
+    background:url(/Library_of_lovely_xin/Public/Validform/images/onLoad.gif) no-repeat left center;
+}
+.Validform_error{
+    background-color:#ffe7e7;
+}
+#Validform_msg{color:#7d8289; font: 12px/1.5 tahoma, arial, \5b8b\4f53, sans-serif; width:280px; -webkit-box-shadow:2px 2px 3px #aaa; -moz-box-shadow:2px 2px 3px #aaa; background:#fff; position:absolute; top:0px; right:50px; z-index:99999; display:none;filter: progid:DXImageTransform.Microsoft.Shadow(Strength=3, Direction=135, Color='#999999');}
+#Validform_msg .iframe{position:absolute; left:0px; top:-1px; z-index:-1;}
+#Validform_msg .Validform_title{line-height:25px; height:25px; text-align:left; font-weight:bold; padding:0 8px; color:#fff; position:relative; background-color:#000;}
+#Validform_msg a.Validform_close:link,#Validform_msg a.Validform_close:visited{line-height:22px; position:absolute; right:8px; top:0px; color:#fff; text-decoration:none;}
+#Validform_msg a.Validform_close:hover{color:#cc0;}
+#Validform_msg .Validform_info{padding:8px;border:1px solid #000; border-top:none; text-align:left;}
+
+#registerUser{
+    width: 800px;
+}
+
+/*书签样式*/
+.bookmark {
+    margin-bottom: 30px;
+    width: 100px;
+    height: 48px;
+    background: url("/Library_of_lovely_xin/Public/image/shuqian52.png");
+    background-size: 100%;
+    background-repeat: no-repeat;
+    -webkit-transform: rotate(45deg);
+    -moz-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    -o-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+
+.bookmark-div{
+    float: left;
+    padding-top: 60px;
+    margin-left:10px;
+}
+.bookmark-text{
+    width: 71px;
+    height: 46px;
+    color: black;
+    line-height: 46px;
+    position: absolute;
+    left: 28px;
+    text-align: center;
+    -webkit-box-shadow: 5px 5px 3px gray;
+    -moz-box-shadow: 5px 5px 3px gray ;
+    box-shadow: 5px 5px 3px gray ;
+}
+
+.bookmark-hide{
+    display: none;
+}

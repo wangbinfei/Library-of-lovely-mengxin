@@ -1,0 +1,75 @@
+<include file="publicHeader"/>
+
+    <!--<div class="col-xs-10 col-sm-10 col-xs-offset-1 col-sm-offset-1">-->
+<div class="book-body">
+    <!--禁止翻页-->
+    <div>
+        <button class="forbid" style="margin-top:10px;">禁止点击翻页</button>
+        <button class="allow" style="margin-top:10px;">开启点击翻页</button>
+        <input class="forbid-value" type="hidden" value="true">
+    </div>
+    <!--禁止翻页end-->
+    <div class="book-page-float">
+    <!--书页-->
+    <div class="book-page" page="{$page}" book_id="{$book_id}">
+        <div class="book-pageleft book-pageclick">
+            <pre>{$bookContent[0]}</pre>
+        </div>
+        <div class="book-pageright">
+            <pre>{$bookContent[1]}</pre>
+        </div>
+        <div class="clear"></div>
+        <div class="pageNum">
+            <div class="pageNum1">{$page*2-1}</div>
+            <div class="pageNum2">{$page*2}</div>
+        </div>
+    </div>
+    </div>
+    <div class="bookmark-div">
+        <div>
+            <div class="bookmark" id="save-bookmark">
+                <div class="bookmark-text">
+                    保存书签
+                </div>
+            </div>
+        </div>
+        <div>
+            <div class="bookmark">
+                <div class="bookmark-text" id="bookmark-list">
+                    打开书签
+                </div>
+            </div>
+        </div>
+        <volist name="bookmark" id="mark">
+            <div class="bookmark-hide">
+                <div class="bookmark">
+                    <div class="bookmark-text" page="{$mark.bookmark_page}">
+                        {$mark['bookmark_page']*2-1}页
+                    </div>
+                </div>
+            </div>
+        </volist>
+    </div>
+    <!--<div class="col-xs-1 col-sm-1 bookmark-div">-->
+    <div class="clear"></div>
+</div>
+
+
+    <!--滑块翻页-->
+    <div class="range">
+        <strong>1</strong>
+        <input type="range" min="1" max="{$bookContent['pageCount']}" style="display: inline;width: 600px" id="range" value="{$page}">
+        <strong>{$bookContent['pageCount']*2}</strong>
+    </div>
+    <div>
+        <input type="hidden" value="1" id="key">
+    </div>
+
+    <!--翻页-->
+    <script>
+        var pageCount = {$bookContent['pageCount']};
+    </script>
+
+
+</body>
+</html>

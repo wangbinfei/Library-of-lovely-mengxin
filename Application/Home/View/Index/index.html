@@ -1,0 +1,131 @@
+<include file="publicHeader"/>
+    <div id="myCarousel" data-interval="3000" class="carousel slide <if condition='$p gt 1'>index-hidden</if>">
+        <ol class="carousel-indicators">
+            <volist name="cycle" id="cyc">
+                <li data-target="#myCarousel" data-slide-to="{$cyc['cycle_id'] - 1}" <if condition="$i eq 1">class="active"</if>></li>
+            </volist>
+        </ol>
+        <div class="carousel-inner">
+            <volist name="cycle" id="cyc">
+                <div class="item <if condition='$i eq 1'>active</if>" style="background-image: url(__PUBLIC__/{$cyc.cycle_address});
+                background-size: cover;
+                filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(
+                src='__PUBLIC__/{$cyc.cycle_address}',
+                sizingMethod='scale');">
+                    <div class="caption">{$cyc.cycle_title}</div>
+                </div>
+            </volist>
+        </div>
+        <a class="carousel-control left" href="#myCarousel" data-slide="prev">&lt;</a>
+        <a class="carousel-control right" href="#myCarousel" data-slide="next">&gt;</a>
+    </div>
+    <script>
+        $('#myCarousel').carousel('cycle');
+    </script>
+
+
+    <!--书架-->
+    <div class="bookshelf">
+        <div class="shelf-top"></div>
+        <div class="shelf-frame ">
+            <volist name="book" id="bookInfo">
+                <if condition="$i eq 12"><div class="shuji-clear"></div></div><div class="shelf-frame2"></if>
+                <if condition="$i eq 18"></div><div class="shelf-frame3"></if>
+                <div class="shuji" data-toggle="modal" data-target="#shuji{$key}">{$bookInfo.book_name}</div>
+                <div class="modal fade" id="shuji{$key}" aria-hidden="true">
+                    <div class="modal-content modal-dialog" id="shujimodal">
+                        <div class="modal-header">
+                            <button class="close" data-dismiss="modal">&times;</button>
+                            <h3>{$bookInfo.book_name}</h3>
+                        </div>
+                        <div class="modal-body">
+                            <p>作者：{$bookInfo.book_author}</p>
+                            <p>内容简介：{$bookInfo.book_abstract}</p>
+                        </div>
+                        <div class="modal-footer">
+                            <a class="btn btn-primary btn-close" href="__MODULE__/Index/indexBook?book_id={$bookInfo.book_id}&page=1" target="_blank" >阅读此书</a>
+                            <button class="btn btn-default" data-dismiss="modal">取消阅读</button>
+                        </div>
+                    </div>
+                </div>
+            </volist>
+
+        <!--上传图书-->
+        <div class="add-bookshelf">
+            <div id="upload-book" data-toggle="modal" data-target="#shelfModal">
+                添加图书
+            </div>
+            <div class="modal fade" id="shelfModal" tabindex="-1" role="dialog" aria-labelledby="shelfModalLabel" aria-hidden="true">
+                <div class="backdrop">
+                    <div class="modal-content modal-dialog">
+                        <div class="modal-header">
+                            <button class="close" data-dismiss="modal" id="close">&times;</button>
+                            <h4>新书上架</h4>
+                        </div>
+                        <div class="modal-body">
+                            <form method="post" id="up-book" class="form-horizontal" enctype="multipart/form-data">
+                                <div class="form-group">
+                                    <label for="book_name" class="col-sm-2 col-sm-offset-1 form-label">书名</label>
+                                    <div class="col-sm-6">
+                                        <input type="text" name="book_name" id="book_name" class="form-control" placeholder="请输入书名" datatype="*" >
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="book_author" class="col-sm-2 col-sm-offset-1 form-label">作者</label>
+                                    <div class="col-sm-6">
+                                        <input type="text" name="book_author" id="book_author" placeholder="请输入作者" class="form-control">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="book_cover" class="col-sm-2 col-sm-offset-1 form-label">图书封面</label>
+                                    <div class="col-sm-6">
+                                        <input type="file" name="book_cover" id="book_cover" class="form-control">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="book_abstract" class="col-sm-2 col-sm-offset-1 form-label">图书简介</label>
+                                    <div class="col-sm-6">
+                                        <textarea name="book_abstract" id="book_abstract" class="form-control" placeholder="请输入图书简介"></textarea>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="book_content" class="form-label col-sm-2 col-sm-offset-1">图书文件</label>
+                                    <div class="col-sm-6">
+                                        <input type="file" name="book_content" id="book_content" class="form-control">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="form-control-static col-sm-8 col-sm-offset-1" id="isBook"></div>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="modal-footer">
+                            <button class="btn btn-default" data-dismiss="modal">取消</button>
+
+                            <button class="btn btn-primary" id="sub">提交</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--异步提交图书-->
+        <script>
+            $(function () {
+
+            })
+        </script>
+
+        </div>
+        <div class="<if condition='$p gt 1'>page-lf</if>">
+            <a href="__MODULE__/index/index/p/{$p-1}" class="<if condition='$p lt 2'>index-hidden</if>"><<</a>
+            <a class="span-right <if condition='$p eq $pages'>index-hidden</if>" href="__MODULE__/index/index/p/<if condition='$p+1 eq 1'>2<else />{$p+1}</if>">>></a>
+        </div>
+    </div>
+
+    <!--分页列表-->
+    <div class="page-content">{$show}</div>
+
+
+
+</body>
+</html>
